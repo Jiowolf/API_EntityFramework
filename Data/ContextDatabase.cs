@@ -29,28 +29,28 @@ namespace API_EntityFramework.Data
                     .IsRequired()
                     .HasMaxLength(20);
 
-                entity.HasOne<Address>()
-                    .WithMany()
-                    .HasForeignKey(fk => fk.IdAdress)
-                    .OnDelete(DeleteBehavior.Restrict);
+                //entity.HasOne<Address>()
+                //    .WithMany()
+                //    .HasForeignKey(fk => fk.IdAdress)
+                //    .OnDelete(DeleteBehavior.Restrict);
             });
 
-            modelBuilder.Entity<Address>(entity =>
-            {
-                entity.HasKey(a => a.Id);
+            //modelBuilder.Entity<Address>(entity =>
+            //{
+            //    entity.HasKey(a => a.Id);
 
-                entity.Property(a => a.StreetNumber)
-                    .IsRequired()
-                    .HasMaxLength(10);
-                entity.Property(a => a.ZipCode)
-                    .IsRequired();
-                entity.Property(a=>a.Town)
-                    .IsRequired()
-                    .HasMaxLength(10);
-                entity.Property(a=> a.Country)
-                    .IsRequired()
-                    .HasMaxLength(10);
-            });
+            //    entity.Property(a => a.StreetNumber)
+            //        .IsRequired()
+            //        .HasMaxLength(10);
+            //    entity.Property(a => a.ZipCode)
+            //        .IsRequired();
+            //    entity.Property(a=>a.Town)
+            //        .IsRequired()
+            //        .HasMaxLength(10);
+            //    entity.Property(a=> a.Country)
+            //        .IsRequired()
+            //        .HasMaxLength(10);
+            //});
 
 
 
@@ -63,7 +63,7 @@ namespace API_EntityFramework.Data
                         FirstName = "John",
                         LastName = "Doe",
                         Email = "johndoe@domain.be",
-                        IdAdress = 1
+                        //IdAdress = 1
                     }
                 );
 

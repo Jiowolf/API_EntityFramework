@@ -53,13 +53,13 @@ namespace API_EntityFramework.Controllers
 
         //Adress
 
-        [HttpGet]
-        [Route("api/adress")]
-        public async Task<ActionResult<IEnumerable<Address>>> GetAdress()
-        {
-            IEnumerable<Address> adresses = await context.Addresses.ToListAsync();
-            return Ok(adresses);
-        }
+        //[HttpGet]
+        //[Route("api/adress")]
+        //public async Task<ActionResult<IEnumerable<Address>>> GetAdress()
+        //{
+        //    IEnumerable<Address> adresses = await context.Addresses.ToListAsync();
+        //    return Ok(adresses);
+        //}
 
         
 

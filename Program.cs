@@ -1,6 +1,7 @@
 
 using API_EntityFramework.Data;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
 
 
 namespace API_EntityFramework
@@ -19,10 +20,21 @@ namespace API_EntityFramework
 
             // We create here the service
             builder.Services.AddDbContext<ContextDatabase>(opt => opt.UseSqlServer(context));
+            builder.Services.AddControllers();
 
             var app = builder.Build();
 
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
 
+                app.UseSwagger(options =>
+                {
+                    options.RouteTemplate = "/openapi/{documentName}.json";
+                });
+                app.MapScalarApiReference();
+            }
 
 
 
